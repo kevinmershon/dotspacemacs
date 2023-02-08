@@ -1,0 +1,20 @@
+* Spacemacs Config
+
+This repository contains a [[https://github.com/syl20bnr/spacemacs][spacemacs]] configuration that can help you get started
+using spacemacs.
+
+First, install spacemacs:
+
+#+BEGIN_SRC sh
+$ brew tap d12frosted/emacs-plus
+$ brew install emacs-plus
+$ brew linkapps emacs-plus
+#+END_SRC
+
+Then clone this configuration:
+
+#+BEGIN_SRC sh
+$ git clone git@github.com:kevinmershon/dotspacemacs.git ~/.spacemacs.d
+#+END_SRC
+
+You are all set!
