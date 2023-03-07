@@ -53,3 +53,20 @@
     (insert (shell-command-to-string "pbpaste"))))
 (evil-leader/set-key "o y" 'copy-to-clipboard)
 (evil-leader/set-key "o p" 'paste-from-clipboard)
+
+;; Removes all scratch buffers from after the mode has been set.
+(setq initial-scratch-message "")
+(defun remove-scratch-buffers ()
+    (if (get-buffer "*emacs*")
+        (kill-buffer "*emacs*"))
+    (if (get-buffer "*Flycheck error messages*")
+        (kill-buffer "*Flycheck error messages*"))
+    (if (get-buffer "*Messages*")
+        (kill-buffer "*Messages*"))
+    (if (get-buffer "*scratch*")
+        (kill-buffer "*scratch*")))
+(add-hook 'after-change-major-mode-hook 'remove-scratch-buffers)
+
+;; don't use Messages buffer at all
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
