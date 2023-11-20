@@ -16,7 +16,9 @@
   ;; eqp quick-eval in minibuffer
   (define-key evil-normal-state-map (kbd "e q p") 'cider-read-and-eval)
   ;; ens quickly hop to file namespace
-  (define-key evil-normal-state-map (kbd "e n s") 'cider-repl-set-ns))
+  (define-key evil-normal-state-map (kbd "e n s") 'cider-repl-set-ns)
+  ;; eV quickly hop to file namespace
+  (define-key evil-normal-state-map (kbd "e p") 'cider-pprint-eval-last-sexp))
 (add-hook 'clojure-mode-hook 'clojure-key-bindings)
 
 ;; auto-format before save, auto reload namespace after save

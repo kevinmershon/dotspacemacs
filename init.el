@@ -41,7 +41,6 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; Misc
-     selectric
      helm
      better-defaults
      (spell-checking :variables
@@ -59,7 +58,6 @@ This function should only modify configuration layer settings."
      semantic
 
      ;; Apps
-     github
      (git :variables
           git-link-default-branch "master"
           git-commit-summary-max-length 50
@@ -67,60 +65,7 @@ This function should only modify configuration layer settings."
           magit-branch-prefer-remote-upstream '("master")
           magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1
           magit-branch-read-upstream-first nil)
-     (org :variables
-          org-list-allow-alphabetical t
-          org-directory "~/org"
-          org-agenda-span 14
-          org-agenda-dim-blocked-tasks 'invisible
-          org-agenda-files "~/org/agendafiles"
-          org-agenda-text-search-extra-files '(agenda-archives)
-          org-agenda-start-on-weekday nil
-          ;;org-agenda-custom-commands set in private.el
-          org-habit-graph-column 55
-          org-startup-indented t
-          org-startup-folded nil
-          org-log-into-drawer t
-          org-log-reschedule 'note
-          org-log-redeadline 'note
-          org-time-clocksum-format '(:hours "%d" :require-hours t
-                                            :minutes ":%02d" :require-minutes t)
-          org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELED(c@)"))
-          org-enforce-todo-dependencies t
-          org-outline-path-complete-in-steps nil
-          org-refile-use-outline-path 'file
-          org-refile-targets '((nil :maxlevel . 9)
-                               (org-agenda-files :maxlevel . 9))
-          ;;org-capture-templates set in private.el
-          org-export-publishing-directory "~/Downloads/"
-          org-enable-reveal-js-support t
-          org-odt-preferred-output-format "docx"
-          org-highlight-latex-and-related '(latex)
-          org-latex-to-mathml-convert-command "latexmlmath \"%i\" --presentationmathml=%o"
-          org-enable-jira-support t)
 
-     (mu4e :variables
-           mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu4e"
-           mu4e-msg2pdf "/opt/bin/msg2pdf"
-           mu4e-html2text-command "w3m -dump -cols 80 -T text/html"
-           mu4e-view-show-addresses t
-           mu4e-headers-fields '((:human-date . 12) (:flags . 6) (:from . 22) (:subject))
-           mu4e-maildir       "~/Maildir"
-           mu4e-sent-folder   "/sent"
-           mu4e-drafts-folder "/drafts"
-           mu4e-trash-folder  "/trash"
-           mu4e-attachment-dir "~/Downloads"
-           mu4e-get-mail-command "mbsync -Va"
-           mu4e-update-interval 120
-           mu4e-hide-index-messages t
-           mu4e-change-filenames-when-moving t
-           mu4e-compose-dont-reply-to-self t
-           mu4e-confirm-quit nil
-           ;; mu4e-contexts set in private.el
-           message-sendmail-f-is-evil 't
-           message-sendmail-extra-arguments '("--read-envelope-from")
-           message-insert-formatted-citation-line 'message-cite-original
-           sendmail-program "msmtp"
-           message-send-mail-function 'message-send-mail-with-sendmail)
      (latex :variables
             latex-build-command "LaTeX"
             latex-enable-folding t)
@@ -133,8 +78,6 @@ This function should only modify configuration layer settings."
                      osx-right-control-as 'left
                      osx-swap-option-and-command nil)
      restclient
-     xkcd
-     finance
 
      ;; Languages
      sql
@@ -150,15 +93,10 @@ This function should only modify configuration layer settings."
      markdown
      emacs-lisp
      common-lisp
-     csharp
      python
-     groovy
      yaml
      plantuml
-     graphviz
      shell-scripts
-     terraform
-     ansible
      (html :variables
            web-fmt-tool 'prettier)
      (javascript :variables
@@ -186,15 +124,8 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(4clojure
-                                      beacon
-                                      dired-du
-                                      fill-column-indicator
-                                      kibit-helper
+   dotspacemacs-additional-packages '(kibit-helper
                                       oauth2
-                                      ob-async
-                                      ox-twbs
-                                      poporg
                                       parinfer-rust-mode
                                       web-beautify
                                       eslint-fix)
