@@ -88,12 +88,6 @@
         (kill-buffer "*emacs*"))
     (if (get-buffer "*Flycheck error messages*")
         (kill-buffer "*Flycheck error messages*"))
-    (if (get-buffer "*Messages*")
-        (kill-buffer "*Messages*"))
     (if (get-buffer "*scratch*")
         (kill-buffer "*scratch*")))
 (add-hook 'after-change-major-mode-hook 'remove-scratch-buffers)
-
-;; don't use Messages buffer at all
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
