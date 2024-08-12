@@ -4,7 +4,8 @@
 ;;
 (use-package parinfer-rust-mode
   :hook emacs-lisp-mode
-  :init (setq parinfer-rust-auto-download t))
+  ;; we have to build parinfer-rust-mode ourselves
+  :init (setq parinfer-rust-auto-download nil))
 
 ;; treemacs config
 (use-package treemacs
@@ -13,6 +14,32 @@
             (setq treemacs-toggle-show-dotfiles t
                   treemacs-sorting 'alphabetic-asc))
   :bind   (:map global-map ("<f2>" . treemacs)))
+
+;; c# / Unity
+(setenv "FrameworkPathOverride" "/lib/mono/4.5")
+(use-package lsp-mode
+  :ensure t
+  :bind-keymap
+  ("C-c l" . lsp-command-map)
+  :custom
+  (lsp-keymap-prefix "C-c l"))
+
+(use-package csharp-mode
+  :ensure t
+  :init
+  (defun my/csharp-mode-hook ()
+    (setq-local lsp-auto-guess-root t)
+    (editorconfig-mode 1)
+    (lsp))
+  (add-hook 'csharp-mode-hook #'my/csharp-mode-hook))
+
+(use-package editorconfig
+  :ensure t
+  :demand t
+  :mode ("\\.?editorconfig$" . editorconfig-conf-mode)
+  ;;:config
+  ;;(setq editorconfig-exec-path "/usr/local/bin/editorconfig")
+  (editorconfig-mode 1))
 
 ;; disable global line highlight mode
 (global-hl-line-mode 0)

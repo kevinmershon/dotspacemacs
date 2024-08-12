@@ -40,6 +40,8 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
 
+     lsp
+
      ;; Misc
      helm
      better-defaults
@@ -272,12 +274,12 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '(("Menlo for Powerline"
-                                :size 14
+                                :size 12
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.2)
                                ("DejaVu Sans Mono"
-                                :size 23
+                                :size 12
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.1))
